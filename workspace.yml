@@ -1,0 +1,14 @@
+version: workspaces/v0.1
+name: Energy Hub
+dataset_paths:
+- analyze/datasets
+- .meltano/analyze/datasets
+channel_paths:
+- analyze/channels
+pipeline_paths:
+- pipelines
+plugin_paths:
+- plugins
+app_properties:
+# This sets the dataset that will be sent with a welcome message to new users joining your workspace
+  WELCOME_DATASET_ALIAS: analyze/datasets/welcome
