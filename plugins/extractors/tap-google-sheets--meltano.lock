@@ -1,0 +1,90 @@
+{
+  "plugin_type": "extractors",
+  "name": "tap-google-sheets",
+  "namespace": "tap_google_sheets",
+  "variant": "meltano",
+  "docs": "https://www.matatika.com/docs/data-sources/tap-google-sheets/",
+  "repo": "https://github.com/Matatika/tap-google-sheets",
+  "pip_url": "git+https://github.com/Matatika/tap-google-sheets@v0.2.0",
+  "capabilities": [
+    "state",
+    "catalog",
+    "discover"
+  ],
+  "settings": [
+    {
+      "name": "oauth_credentials.authorization_url",
+      "kind": "hidden",
+      "value": "https://oauth2.googleapis.com/token",
+      "label": "OAuth identity provider authorization endpoint used create and refresh tokens",
+      "protected": false
+    },
+    {
+      "name": "oauth_credentials.scope",
+      "kind": "hidden",
+      "value": "https://www.googleapis.com/auth/spreadsheets.readonly https://www.googleapis.com/auth/drive.readonly",
+      "label": "OAuth scopes we need to request access to",
+      "protected": false
+    },
+    {
+      "name": "oauth_credentials.access_token",
+      "kind": "hidden",
+      "label": "Access Token",
+      "protected": false
+    },
+    {
+      "name": "oauth_credentials.refresh_token",
+      "kind": "hidden",
+      "label": "OAuth Refresh Token",
+      "protected": false
+    },
+    {
+      "name": "oauth_credentials.refresh_proxy_url",
+      "kind": "hidden",
+      "label": "Optional - will be called with 'oauth_credentials.refresh_token' to refresh the access token",
+      "protected": false,
+      "required": "false"
+    },
+    {
+      "name": "oauth_credentials.refresh_proxy_url_auth",
+      "kind": "hidden",
+      "label": "Optional - Sets Authorization header on 'oauth_credentials.refresh_url' request",
+      "protected": false,
+      "required": "false"
+    },
+    {
+      "name": "oauth_credentials.client_id",
+      "kind": "hidden",
+      "label": "Optional - OAuth Client ID used if refresh_proxy_url not supplied",
+      "protected": false,
+      "required": "false"
+    },
+    {
+      "name": "oauth_credentials.client_secret",
+      "kind": "hidden",
+      "label": "Optional - OAuth Client Secret used if refresh_proxy_url not supplied",
+      "protected": false,
+      "required": "false"
+    },
+    {
+      "name": "sheet_id",
+      "kind": "string",
+      "label": "Sheet ID",
+      "protected": false
+    },
+    {
+      "name": "stream_name",
+      "kind": "string",
+      "label": "Stream Name (Optional)",
+      "protected": false,
+      "required": "false"
+    },
+    {
+      "name": "child_sheet_name",
+      "kind": "string",
+      "label": "Child Sheet Name (Optional)",
+      "protected": false,
+      "required": "false"
+    }
+  ]
+}
