@@ -6,6 +6,10 @@ plugins:
   - name: tap-google-sheets
     variant: meltano
     pip_url: git+https://github.com/Matatika/tap-google-sheets@v0.2.0
+  loaders:
+  - name: target-postgres--transferwise
+    variant: transferwise
+    pip_url: git+https://github.com/Matatika/pipelinewise-target-postgres@v0.1.0
   files:
   - name: files-dbt
     pip_url: git+https://github.com/Matatika/files-dbt@v1.0.x.0
