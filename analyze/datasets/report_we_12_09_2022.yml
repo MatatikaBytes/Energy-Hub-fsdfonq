@@ -1,0 +1,338 @@
+version: datasets/v0.2
+source: analyze/channels/fuel
+title: Fuel
+description: |-
+  # Latest petrol and diesel fuel prices and projections
+
+  [Credit HeyCar Blog](https://heycar.co.uk/blog)
+
+  14.09.2022
+
+  ## Latest petrol and diesel fuel prices and projections
+
+  ![Should I buy a diesel car in 2021?](https://assets-eu-01.kc-usercontent.com/bb5aba31-d98c-0160-8548-418b3723c58e/35368f54-f855-40bf-a120-4ad8c61e9266/Fuel%20pump%20diesel.jpg?width=1750&fm=jpg&auto=format)
+
+  Fuel prices in the UK have reached record highs in 2022, with the average price of petrol hitting 191.53p-per-litre and diesel reaching 199.05p in July.
+
+  The latest average fuel prices, as of 13 September 2022, are 167.22p for petrol and 182.49p for diesel, according to the RAC. 
+
+  In June 2022 average petrol pump prices increased every single day, with the cost of filling up an average size 55-litre family car increasing by £9.12 over the month to £105.29, having exceeded £100 for the first time on 8 June, according to the RAC. 
+
+  The average price of diesel also shot up during June, ending the month at 199.05p,  making the cost of a tank £109.48 (£8.59 more than at the start of the month). 
+
+  In May 2022 the average price of petrol was up 11p while diesel hit 183p, pushing the cost to fill up a 55-litre tank of diesel past £100 for the first time. 
+
+  In the [Spring Budget](https://heycar.co.uk/blog/budget-2022) on 23 March 2022 the former Chancellor Rishi Sunak reduced fuel duty by 5p a litre until March 2023 in an attempt to counter previous record prices of 167.3p for petrol and 179.9p for diesel. 
+
+  This, along with the price of oil dropping, contributed to a decline in average pump prices in April 2022, although drivers did not feel the full benefit of the savings. 
+
+  The average price of petrol was 162.75p by the end of April 2022, falling by 0.5p a litre from the start of the month, according to the RAC. Diesel stayed the same at 177p in April 2022 (it was 177.44p on 1 April 2022 and 177.31p on 30 April 2022). 
+
+  April's average prices followed three months of fuel prices consistently reaching new record levels. March 2022 saw the largest ever increases in fuel prices. The average price of a litre of unleaded petrol went up by 11.62p and ended the month at 163.28p, while diesel rose 22.06p, ending the month at 177.29p, according to the RAC. 
+
+  It said the previous biggest monthly increase for petrol was in October 2021 when the prices rose by 7.43ppl. Diesel's previous worst month was May 2008, when the cost of a litre went up by 8.43ppl.
+
+  In 2021, the record was 147.72p for petrol and 150.96ppl for diesel on 22 November. Wholesale and retail prices dropped in December but began climbing again in January 2022.
+
+  -   [What is mpg and how is it calculated?](https://heycar.co.uk/blog/what-is-mpg "What is mpg and how is it calculated?")
+  -   [Best mpg cars to buy in 2022](https://heycar.co.uk/guides/best-cars-for-real-mpg "Best mpg cars to buy in 2022")
+  -   [Most economical cars on sale right now](https://heycar.co.uk/guides/most-economical-cars-for-mpg "Most economical cars on sale right now")
+
+  ![Fuel pumps](https://assets-eu-01.kc-usercontent.com/bb5aba31-d98c-0160-8548-418b3723c58e/685a8f02-3b11-44f6-ae93-2f4b853b2976/fuel-pumps.jpg?width=1750&fm=jpg&auto=format)
+
+  ## Why are fuel prices going up?
+
+  The simple explanation why fuel prices in the UK have been going up is that the cost of a barrel of oil has risen. In 2020 the wholesale price of a barrel of crude oil was around $40, it more than doubled in 2021 with the ongoing impact of the Covid-19 pandemic affecting supply and demand.  
+
+  At the start of January 2022 the cost of oil was $79 but this had risen to $92 by the end of the month and went above $100 per barrel after Russia (the second largest oil producer in the world) invaded neighbouring Ukraine on 24 February 2022, making traders worried about disruption to the global supply chain. 
+
+  On 1 March 2022 the price of oil had jumped by $10 to $112.99 a barrel in response to the Russia-Ukraine crisis. The RAC predicted this was likely to take the average price of petrol towards 155p a litre and diesel to 160p.
+
+  The price of oil went on to hit $137.72 a barrel on 8 March - the highest it has been since 2008, although it fell to $109.98 by the end of the month. 
+
+  In April 2022 the price of oil dropped under $100 on three occasions but finished the month on $108.62 a barrel.
+
+  In May 2022 fuel prices continued to fluctuate but have fallen in recent months. 
+
+  When the price of oil rises, fuel retailers often pass on the cost to consumers at the pumps although they can absorb some of the increases, as they did in January 2022 (wholesale prices rose by 4.9p for petrol and 3.6p for diesel but did not rise by as much as that at the pumps).
+
+  Fuel retailers have an important role to play in fuel prices. Competition between the 'big four' supermarkets Asda, Tesco, Morrisons and Sainsbury's has helped to reduce prices in the past - when one supermarket giant cuts their fuel prices others often follow. But in 2021 fuel retailers were heavily criticised for not cutting the cost of fuel at the pumps when the price of oil dropped towards the end of the year.
+
+  During February 2022, the average margin was 8p for each litre of petrol and just under 6p for each litre of diesel, compared to 16p and 12p respectively during December.
+
+  In April 2022 retailers' margins were far higher than in March 2022, according to the RAC Fuel Watch. It estimates retailers took around 4p more a litre in April than they did in March. 
+
+  In July 2022 they were accused again of not passing on savings to car owners, with wholesale prices falling for several weeks in a row but major fuel retailers not lowering prices at the pumps until 17 July 2022. 
+
+  The UK Government also has a major influence on fuel prices as both fuel duty (currently 52.95pp) and VAT (standard 20% rate) make up the majority of the price of petrol and diesel. 
+
+  Fuel duty was frozen from March 2011 to March 2022, bringing some relief for drivers in the midst of rising prices, while the Chancellor lowered it by 5ppl in the Spring Budget 2022. 
+
+  When the Government introduced [E10 petrol](https://heycar.co.uk/guides/e-10-fuel) in England, Scotland and Wales in September 2021 it had an impact on fuel prices as ethanol is more expensive than petrol.
+
+  Other factors which influence wholesale prices, according to the RAC, are: oil refinery production and capacity, the pound to dollar exchange rate, as refined fuel is sold in US dollars per metric tonne; and distribution costs. 
+
+  ![Line graph showing average petrol pump price (pence per litre), January 2020 to March 2022](https://assets-eu-01.kc-usercontent.com/bb5aba31-d98c-0160-8548-418b3723c58e/2ab5fce0-85ce-4172-9c70-43f2a433c721/Average%20petrol%20pump%20price%20%28pence%20per%20litre%29%20since%202020.jpeg?width=1750&fm=jpg&auto=format)
+
+  Average petrol pump price, January 2020 - March 2022 (source: RAC/Experian Catalyst)
+
+  ![Line graph showing average diesel pump price (pence per litre) since 2020](https://assets-eu-01.kc-usercontent.com/bb5aba31-d98c-0160-8548-418b3723c58e/e131eb15-e1a9-45e9-a10c-7f51d340599f/Average%20diesel%20pump%20price%20%28pence%20per%20litre%29%20since%202020.jpeg?width=1750&fm=jpg&auto=format)
+
+  Average diesel pump price, January 2020 - March 2022 (source: RAC/Experian Catalyst)
+
+  ## What makes up the cost of a litre of petrol?
+
+  Breakdown of the average UK price of petrol (167.22p, as at 12 September 2022. Source: RAC)
+
+  ### Element
+
+  -   Wholesale petrol (90%)
+  -   Bio content (up to 10%) - E10
+  -   Delivery and oil company 
+  -   Retailer margin
+  -   Fuel duty
+  -   VAT at 20%
+
+  ### Pence per litre
+
+  -   54.01
+  -   10.13
+  -   1.70
+  -   20.57
+  -   52.95
+  -   27.87
+
+  ### Percentage of total price
+
+  -   32%
+  -   6%
+  -   1%
+  -   12%
+  -   32%
+  -   17%
+
+  ## **How much does it cost to fill up the average family car?**
+
+  It now costs £91.97 to fill up a [Ford Focus](https://heycar.co.uk/ford/focus) (55-litre fuel tank) with petrol and £100.36 to fill up with diesel. 
+
+  ## **Which is the most expensive place in the UK to buy fuel?**
+
+  Fuel prices are typically highest in the South East of England. Here, on 31 August 2022, drivers paid on average 170.89p-per-litre for petrol, and 184.50p for diesel. The South West had the highest average diesel price at 184.61p. 
+
+  ## Which is the cheapest place in the UK to buy fuel?
+
+  Northern Ireland is the cheapest place in the UK to buy fuel. On 31 August 2022 the average price of petrol in Northern Ireland was 167.22ppl while diesel was 180.58ppl. 
+
+  (Source: RAC Fuel Watch, Experian Catalist)
+
+  ## How do regional fuel prices compare?
+
+  Cost of petrol and diesel in different parts of the UK on 31 August 2022 (source: the RAC, Experian Catalist)
+
+  ### Area
+
+  -   UK average
+  -   Northern Ireland
+  -   Scotland
+  -   Wales
+  -   North East
+  -   North West
+  -   Yorkshire and the Humber 
+  -   West Midlands
+  -   East Midlands
+  -   East
+  -   London
+  -   South East
+  -   South West
+
+  ### Petrol price
+
+  -   169.80
+  -   167.22
+  -   168.27
+  -   168.27
+  -   170.89
+  -   170.71
+  -   169.13
+  -   170.46
+  -   170.30
+  -   170.87
+  -   170.08
+  -   170.89
+  -   170.71
+
+  ### Diesel price
+
+  -   183.71
+  -   180.58
+  -   184.18
+  -   183.28
+  -   182.93
+  -   182.91
+  -   183.17
+  -   184.06
+  -   183.04
+  -   184.40
+  -   184.35
+  -   184.50
+  -   184.61
+
+  ## **Where can I find the cheapest fuel prices near me?**
+
+  Supermarkets, in general, have the cheapest fuel prices. The big four supermarkets - Asda, Morrisons, Sainsbury's and Tesco - all lowered prices after the 5p fuel duty cut.  BP-owned and Shell-owned fuel stations also applied the 5p cut (6p including VAT).
+
+  Asda had the lowest price petrol in April 2022 at 159.38p on average, and the cheapest diesel at 173.12p, on average. 
+
+  In contrast, the average price of a litre of petrol at motorway fuel stations rose by 0.67p in April 2022 to 182.08p while diesel increased by 0.83p to 192.34p. 
+
+  In May 2022 the average price of a litre of unleaded across the big four supermarkets went up nearly 9p from 160.31p at the beginning of the month to 169.05p by the end. Diesel increased from 174.18p to 180.38p – a jump of 6p a litre.
+
+  At motorway fuel stations, a litre of petrol was 187.66p by the end of May, up by nearly 5.5p from 182.19p at the start. Diesel finished the month at 197.71p, up from 192.5p.
+
+  However, on 7 June 2022 Asda increased its average petrol price nearly 5p a litre in a single day which is unheard of, according to the RAC. The other big supermarkets quickly followed suit, meaning the average of a litre of unleaded at a supermarket jumped 2.5p to 175.91p while diesel increased by nearly 2p to 184.13p on 8 June 2022. 
+
+  The average cost of a litre of diesel at a motorway services passed the £2 mark for the first time ever on 9 June 2022, while petrol at the motorway was at another record of 197.18p.
+
+  In July 2022, supermarkets were accused of being slow to lower their prices, despite weeks of wholesale prices falling. 
+
+  (Source: the AA/Experian Catalist, RAC) 
+
+  ## What are the average weekly road fuel prices in the UK?
+
+  Average weekly petrol and diesel retail prices (source: BEIS)
+
+  ### Date
+
+  -   3 January 2022
+  -   10 January 2022
+  -   17 January 2022
+  -   24 January 2022
+  -   31 January 2022
+  -   7 February 2022
+  -   14 February 2022
+  -   21 February 2022
+  -   28 February 2022
+  -   7 March 2022
+  -   14 March 2022
+  -   21 March 2022
+  -   28 March 2022
+  -   4 April 2022
+  -   11 April 2022
+  -   18 April 2022
+  -   25 April 2022
+  -   2 May 2022
+  -   9 May 2022
+  -   16 May 2022
+  -   23 May 2022
+  -   30 May 2022
+  -   06 June 2022
+  -   13 June 2022
+  -   20 June 2022
+  -   27 June 2022
+  -   4 July 2022
+  -   11 July 2022
+  -   18 July 2022
+  -   25 July 2022
+  -   01 August 2022
+  -   08 August 2022
+  -   15 August 2022
+  -   22 August 2022
+  -   29 August 2022
+  -   5 September 2022
+  -   12 September 2022
+
+  ### Petrol price
+
+  -   145.04
+  -   144.82
+  -   144.8
+  -   144.87
+  -   145.74
+  -   146.33
+  -   146.95
+  -   147.77
+  -   149.22
+  -   152.95
+  -   159.96
+  -   165.37
+  -   162.65
+  -   161.91
+  -   161.78
+  -   161.67
+  -   161.84
+  -   162.48
+  -   163.68
+  -   165.09
+  -   167.59
+  -   170.36
+  -   174.99
+  -   182.53
+  -   186.85
+  -   190.93
+  -   191.71
+  -   190.63
+  -   188.92
+  -   186.6
+  -   182.77
+  -   177.64
+  -   174.19
+  -   171.14
+  -   169.58
+  -   168.93
+  -   167.72
+
+  ### Diesel price
+
+  -   148.85
+  -   148.65
+  -   148.7
+  -   148.81
+  -   149.68
+  -   150.3
+  -   151.10
+  -   151.95
+  -   153.36
+  -   158.56
+  -   169.48
+  -   177.47
+  -   176.44
+  -   176.00
+  -   176.22
+  -   175.93
+  -   176.33
+  -   177.06
+  -   178.39
+  -   179.67
+  -   181.16
+  -   182.25
+  -   184.94
+  -   190.43
+  -   194.87
+  -   198.93
+  -   199.22
+  -   198.74
+  -   197.53
+  -   195.88
+  -   193.04
+  -   188.49
+  -   185.16
+  -   182.92
+  -   183.2
+  -   182.82
+  -   182.3
+
+  ## **When will fuel prices go down?**
+
+  Towards the end of July 2022, fuel prices at the pumps finally started falling. The latest fuel prices, as of 12 September 2022, are 167.22p for petrol and 182.49p for diesel. Prices are predicted to drop further as the wholesale cost of fuel continues to fall. 
+
+  In general, fuel prices were rising in the wake of Russia's invasion of Ukraine on 24 February 2022. With the oil price above $100 a barrel and retailers keen to pass on the increase in wholesale fuel quickly, new records were being set on an almost daily basis in the following weeks, as experts predicted.
+
+  Average petrol prices rose to 167.30p, while diesel climbed to 179.72 on 22 March 2022 before the Chancellor cut fuel duty by 5ppl.
+
+  Although average prices fell in April, motorists did not feel the full benefit. RAC fuel spokesman Simon Williams suggested that the biggest retailers were "protecting themselves from future rises".
+
+  The exchange rate worsening, combined with market uncertainty and the news that the EU is planning to phase out Russian oil all contributed to the price of a barrel of oil rising again in May.
+
+  In May 2022, March's record fuel prices were broken and new records were set in June and July, despite wholesale prices falling. 
+
+  ## Electric car reviews
