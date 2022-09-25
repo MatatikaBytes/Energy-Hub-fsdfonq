@@ -12,7 +12,12 @@ cleaned as (
 
 	select
 		TO_DATE(source.date,'DD/MM/YYYY') as price_date,
-		source.*
+		CAST(source.ulsd AS DECIMAL) as ulsd, 
+		CAST(source.ulsd_duty AS DECIMAL) as ulsd_duty, 
+		CAST(source.ulsd_vat AS DECIMAL) as ulsd_vat, 
+		CAST(source.ulsp AS DECIMAL) as ulsp, 
+		CAST(source.ulsp_duty AS DECIMAL) as ulsp_duty, 
+		CAST(source.ulsp AS DECIMAL) as ulsp_vat 
 	from source
 	where TO_DATE(source.date,'DD/MM/YYYY') is not null -- drop any bad data
 ),
