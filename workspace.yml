@@ -1,5 +1,6 @@
 version: workspaces/v0.1
-name: Energy Hub
+name: FSM Energy Example
+image_url: https://img.freepik.com/premium-vector/orange-van-wrap-design-wrapping-sticker-decal-design_65917-32.jpg?w=826
 dataset_paths:
 - analyze/datasets
 - .meltano/analyze/datasets
