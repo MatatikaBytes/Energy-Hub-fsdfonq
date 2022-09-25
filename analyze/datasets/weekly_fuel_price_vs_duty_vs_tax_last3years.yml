@@ -1,0 +1,68 @@
+version: datasets/v0.2
+source: analyze/channels/fuel
+title: Weekly average road fuel price vs. duty and tax (Last 3 years)
+questions: What are the component costs of weekly fuel price for the last 3 years?
+description: |-
+  Road fuel and other petroleum product price statistics
+
+  There are six companies (four oil companies and two supermarkets) that take part in the weekly fuel price survey, providing ULSP (unleaded petrol), ULSD (Diesel) and super unleaded fuel prices. These cover around 65% of the market. 
+
+  The fuel companies are contacted by email every Monday morning asking for their fuel prices for that day. Prices are entered onto a spreadsheet that calculates the average weighted price for each fuel, with the weights determined by annual sales. 
+
+  In general, all companies supply data when requested. On the rare occasion when we are unable to contact a company, an estimated value is calculated for that company. 
+
+  In general, prices follow a similar pattern so the average price change will normally be suitable for estimation purposes, though the nature of the supply company is also considered.
+
+  The average prices are entered onto the weekly fuel price table and ULSP & ULSD prices are published on the BEIS website the following day. The prices are also reported to the EU for publication in the ‘Oil Bulletin’:
+  http://ec.europa.eu/energy/oil/index_en.htm
+
+  Data on tax and duty rates is also provided to the EU.
+
+  A daily price survey using an alternative methodology is produced by a private sector company. 
+  
+  Periodically, normally every three months or when data is at record or near record levels, the data are compared to ensure that both series are moving in similar directions. 
+  
+  #fuel
+metadata: |-
+  {
+    "name": "price_data",
+    "label": "Weekly road fuel prices", 
+    "related_table": {
+      "columns": [
+        {"name": "week_price_date", "label": "Date", "description": "Date"}
+      ],
+      "aggregates": [
+        {"name": "ulsd_ex", "label": "Diesel", "description": "ULSD (Diesel avg price)"},
+        {"name": "ulsd_duty", "label": "Diesel Duty", "description": "ULSD (Duty portion)"},
+        {"name": "ulsd_vat", "label": "Diesel VAT", "description": "ULSD (VAT portion)"},
+        {"name": "ulsp_ex", "label": "Unleaded", "description": "ULSP (Unleaded avg price)"},
+        {"name": "ulsp_duty", "label": "Unleaded Duty", "description": "ULSP (Duty portion)"},
+        {"name": "ulsp_vat", "label": "Unleaded VAT", "description": "ULSP (VAT portion)"}
+      ]
+    }
+  }
+visualisation: |-
+  {"chartjs-chart": 
+    {"chartType": "line", 
+      "options": {
+        "scales": {
+          "y": {
+            "beginAtZero": true
+          }
+        }
+      }
+    }
+  }
+query: |-
+  select 
+    price_date as "price_data.week_price_date",
+    ulsd_ex as "price_data.ulsd_ex",
+    ulsd_duty as "price_data.ulsd_duty",
+    ulsd_vat as "price_data.ulsd_vat",
+    ulsp_ex as "price_data.ulsp_ex",
+    ulsp_duty as "price_data.ulsp_duty",
+    ulsp_vat as "price_data.ulsp_vat"
+  from vw_fuel_price_wk_avg
+  where price_date::date > current_date - interval '3' year 
+  order by price_date;
+
