@@ -12,9 +12,9 @@ extractors:
   pip_url: git+https://github.com/ets/tap-spreadsheets-anywhere.git
   executable: tap-spreadsheets-anywhere
   capabilities:
-  - state
   - catalog
   - discover
+  - state
   settings:
   - name: tables
     kind: array
@@ -101,9 +101,9 @@ extractors:
   repo: https://github.com/Matatika/tap-googleads
   pip_url: git+https://github.com/Matatika/tap-googleads@v0.3.1
   capabilities:
-  - state
   - catalog
   - discover
+  - state
   settings:
   - name: oauth_credentials.authorization_url
     kind: hidden
@@ -245,9 +245,9 @@ extractors:
   repo: https://github.com/Matatika/tap-meltano
   pip_url: git+https://github.com/Matatika/tap-meltano@v0.3.0
   capabilities:
-  - state
   - catalog
   - discover
+  - state
   settings:
   - name: meltano_database_uri
     kind: password
@@ -306,9 +306,9 @@ extractors:
   repo: https://github.com/Matatika/tap-spotify
   pip_url: git+https://github.com/Matatika/tap-spotify@v0.3.0
   capabilities:
-  - state
   - catalog
   - discover
+  - state
   settings:
   - name: client_id
     kind: password
@@ -382,9 +382,9 @@ extractors:
   repo: https://github.com/Matatika/tap-trello
   pip_url: git+https://github.com/Matatika/tap-trello@v0.3.0
   capabilities:
-  - state
   - catalog
   - discover
+  - state
   settings:
   - name: developer_api_key
     kind: password
@@ -447,9 +447,9 @@ extractors:
   repo: https://github.com/Matatika/tap-auth0
   pip_url: git+https://github.com/Matatika/tap-auth0@v0.3.1
   capabilities:
-  - state
   - catalog
   - discover
+  - state
   settings:
   - name: client_id
     kind: password
@@ -570,9 +570,9 @@ extractors:
   repo: https://github.com/Matatika/tap-google-sheets
   pip_url: git+https://github.com/Matatika/tap-google-sheets@v0.2.0
   capabilities:
-  - state
   - catalog
   - discover
+  - state
   settings:
   - name: oauth_credentials.authorization_url
     kind: hidden
@@ -653,9 +653,9 @@ extractors:
   repo: https://github.com/ets/tap-spreadsheets-anywhere
   pip_url: git+https://github.com/ets/tap-spreadsheets-anywhere.git
   capabilities:
-  - state
   - catalog
   - discover
+  - state
   settings:
   - name: tables
     kind: array
@@ -695,9 +695,9 @@ extractors:
   repo: https://github.com/Matatika/tap-google-analytics
   pip_url: git+https://github.com/Matatika/tap-google-analytics@v0.3.0
   capabilities:
-  - state
   - catalog
   - discover
+  - state
   settings:
   - name: oauth_credentials.authorization_url
     kind: hidden
