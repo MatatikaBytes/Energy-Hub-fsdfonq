@@ -26,8 +26,8 @@ metadata: |-
             {"name": "formatted_month", "label": "Month and Year", "description": "Month and Year"}
          ], 
          "aggregates": [
-            {"name": "travel_hours", "label": "Travel Hours", "description": "Working Hours"},
-            {"name": "fuel_cost", "label": "Fuel Cost", "description": "Fuel Cost"}
+            {"name": "fuel_cost", "label": "Fuel Cost", "description": "Fuel Cost"},
+            {"name": "travel_hours", "label": "Travel Hours", "description": "Travel Hours", "yaxis": "y1"}
          ]
       },
       "links": [
@@ -42,22 +42,22 @@ visualisation: |-
          "chartType": "line",
          "options": {
             "scales": {
-               "y": {
-                  "beginAtZero": true,
-                  "title": {
-                     "text": "Travel Hours",
-                     "display": true
-                  }
-               },
                "y1": {
-                  "display": true,
+                  "beginAtZero": true,
                   "position": "right",
                   "title": {
-                     "text": "Fuel Cost £££",
+                     "text": "Travel Hours",
                      "display": true
                   },
                   "grid": {
                      "drawOnChartArea": false
+                  }
+               },
+               "y": {
+                  "display": true,
+                  "title": {
+                     "text": "Fuel Cost £££",
+                     "display": true
                   }
                }
             }
@@ -67,12 +67,12 @@ visualisation: |-
 query: |-
    SELECT
       dim_date.date_year*100+dim_date.date_month_of_year "fact_workitem.formatted_month"
-      , round(sum(DATE_PART('day', fact_workitem_stages.preworking_timestamp - fact_workitem_stages.travellingto_timestamp) * 24 + 
-            DATE_PART('hour', fact_workitem_stages.preworking_timestamp - fact_workitem_stages.travellingto_timestamp) * 60 +
-            DATE_PART('minute', preworking_timestamp - travellingto_timestamp)) / 60) as "fact_workitem.travel_hours"
       , round(round(sum(DATE_PART('day', fact_workitem_stages.preworking_timestamp - fact_workitem_stages.travellingto_timestamp) * 24 + 
             DATE_PART('hour', fact_workitem_stages.preworking_timestamp - fact_workitem_stages.travellingto_timestamp) * 60 +
             DATE_PART('minute', preworking_timestamp - travellingto_timestamp)) / 60) * 3.3 * min(vw_fuel_price_wk_avg.ulsd) / 100) as "fact_workitem.fuel_cost"
+      , round(sum(DATE_PART('day', fact_workitem_stages.preworking_timestamp - fact_workitem_stages.travellingto_timestamp) * 24 + 
+            DATE_PART('hour', fact_workitem_stages.preworking_timestamp - fact_workitem_stages.travellingto_timestamp) * 60 +
+            DATE_PART('minute', preworking_timestamp - travellingto_timestamp)) / 60) as "fact_workitem.travel_hours"
    from fact_workitem_stages
    left join fact_workitem fw on fact_workitem_stages.work_item_id = fw.work_item_id
    left join dim_date on dim_date.date_day = fw.created_on::date
