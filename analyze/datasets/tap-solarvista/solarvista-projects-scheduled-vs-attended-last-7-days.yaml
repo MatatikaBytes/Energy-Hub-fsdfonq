@@ -1,0 +1,49 @@
+version: datasets/v0.2
+source: tap-solarvista
+title: Projects Scheduled vs Attended Last 7 Days
+questions: How many projects were scheduled and attended for the last 7 days?
+description: |-
+   Projects scheduled vs attended for the last full 7 days.
+
+   #Solarvista
+metadata: |-
+   {
+      "name": "vw_daily_projects", 
+      "label": "Total Projects Scheduled vs Attended Last 7 Days",
+      "related_table": {
+         "columns": [
+            {"name": "date", "label": "Date", "description": "Date"}
+         ], 
+         "aggregates": [
+            {"name": "scheduled", "label": "Scheduled Projects", "description": "Scheduled Projects"},
+            {"name": "attended", "label": "Attended Projects", "description": "Attended Projects"}
+         ]
+      }
+   }
+visualisation: |-
+   {
+      "chartjs-chart": {
+         "chartType": "bar",
+         "options": {
+            "scales": {
+               "y": {
+                  "title": {
+                     "text": "Projects",
+                     "display": true
+                  },
+                  "beginAtZero": true
+               }
+            }
+         }
+      }
+   }
+query: |-
+   select
+      date_day "vw_daily_projects.date"
+      , case when sum(total_scheduled) is null then 0 else sum(total_scheduled) end "vw_daily_projects.scheduled"
+      , case when sum(total_attended) is null then 0 else sum(total_attended) end "vw_daily_projects.attended"
+   from vw_daily_projects
+   where date_day > current_date - interval '7 day'
+   and date_day <= current_date
+   group by date_day
+   order by date_day

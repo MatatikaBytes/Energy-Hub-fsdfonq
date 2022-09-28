@@ -1,0 +1,32 @@
+version: datasets/v0.2
+title: "Work Items Competed Yesterday"
+source: tap-solarvista
+questions: ‘How many work items did we complete yesterday?’
+description: |-
+   Number of work items completed yesterday.
+
+   #Solarvista
+metadata: |-
+   {
+      "name": "fact_workitem", 
+      "label": "Work Items Competed Yesterday", 
+      "related_table": {
+         "columns": [
+         ], 
+         "aggregates": [
+            {"name": "work_items_completed", "label": "Work Items Completed", "description": "Work Items Completed"}
+         ]
+      }
+   }
+visualisation: |-
+   {
+      "chartjs-chart": {
+         "chartType": "treemap"
+      }
+   }
+query: |-
+   SELECT
+      COUNT(*) "fact_workitem.work_items_completed"
+   FROM fact_workitem
+   WHERE current_stage = 'Closed'
+   AND last_modified::date = current_date

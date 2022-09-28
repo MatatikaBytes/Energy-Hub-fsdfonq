@@ -32,10 +32,12 @@ metadata: |-
         {"name": "week_price_date", "label": "Date", "description": "Date"}
       ],
       "aggregates": [
-        {"name": "ulsd_ex", "label": "Diesel", "description": "ULSD (Diesel avg price)"},
+        {"name": "ulsd_total", "label": "Diesel Total", "description": "ULSD (Diesel avg price)"},
+        {"name": "ulsd_ex", "label": "Diesel Ex Taxes", "description": "ULSD (Diesel avg price ex VAT and duty)"},
         {"name": "ulsd_duty", "label": "Diesel Duty", "description": "ULSD (Duty portion)"},
         {"name": "ulsd_vat", "label": "Diesel VAT", "description": "ULSD (VAT portion)"},
-        {"name": "ulsp_ex", "label": "Unleaded", "description": "ULSP (Unleaded avg price)"},
+        {"name": "ulsp_total", "label": "Unleaded Total", "description": "ULSP (Unleaded avg price)"},
+        {"name": "ulsp_ex", "label": "Unleaded", "description": "ULSP (Unleaded avg price ex VAT and duty)"},
         {"name": "ulsp_duty", "label": "Unleaded Duty", "description": "ULSP (Duty portion)"},
         {"name": "ulsp_vat", "label": "Unleaded VAT", "description": "ULSP (VAT portion)"}
       ]
@@ -56,9 +58,11 @@ visualisation: |-
 query: |-
   select 
     price_date as "price_data.week_price_date",
+    ulsd as "price_data.ulsd_total",
     ulsd_ex as "price_data.ulsd_ex",
     ulsd_duty as "price_data.ulsd_duty",
     ulsd_vat as "price_data.ulsd_vat",
+    ulsp as "price_data.ulsp_total",
     ulsp_ex as "price_data.ulsp_ex",
     ulsp_duty as "price_data.ulsp_duty",
     ulsp_vat as "price_data.ulsp_vat"

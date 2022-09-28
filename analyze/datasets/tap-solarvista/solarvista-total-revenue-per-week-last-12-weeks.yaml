@@ -1,0 +1,56 @@
+version: datasets/v0.2
+source: tap-solarvista
+title: Revenue By Week Last 12 Weeks
+questions: What is our revenue per week for the last 12 weeks?
+description: |-
+   Revenue by week for the last 12 full weeks.
+
+   #Solarvista
+metadata: |-
+   {
+      "name": "fact_workitem", 
+      "label": "Revenue By Week Last 12 Weeks",
+      "related_table": {
+         "columns": [
+            {"name": "week_start_date", "label": "Week Start Date", "description": "Week Start Date"}
+         ], 
+         "aggregates": [
+            {"name": "revenue", "label": "Revenue", "description": "Revenue"}
+         ]
+      }
+   }
+visualisation: |-
+   {
+      "chartjs-chart": {
+         "chartType": "bar",
+         "options": {
+            "scales": {
+               "y": {
+                  "title": {
+                     "text": "Revenue",
+                     "display": true
+                  },
+                  "ticks": {
+                     "beginAtZero": true
+                  }
+               },
+               "x": {
+                  "title": {
+                     "text": "Week Start Date",
+                     "display": true
+                  }
+               }
+            }
+         }
+      }
+   }
+query: |-
+   SELECT
+      MIN(mon_sun_week_start) "fact_workitem.week_start_date"
+      , COALESCE(SUM(charge), 0) "fact_workitem.revenue"
+   FROM fact_workitem fw
+   LEFT JOIN dim_date dd ON dd.date_day = fw.report_date
+   WHERE date_day <= current_date
+   GROUP BY week_key
+   ORDER BY MIN(week_key) DESC
+   LIMIT 12;

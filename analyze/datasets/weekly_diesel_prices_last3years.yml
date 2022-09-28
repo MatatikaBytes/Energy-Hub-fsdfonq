@@ -32,11 +32,17 @@ metadata: |-
         {"name": "week_price_date", "label": "Date", "description": "Date"}
       ],
       "aggregates": [
-        {"name": "ulsd_ex", "label": "Diesel", "description": "ULSD (Diesel avg price)"},
+        {"name": "ulsd_total", "label": "Diesel Total", "description": "ULSD (Diesel avg price)"},
+        {"name": "ulsd_ex", "label": "Diesel Ex Taxes", "description": "ULSD (Diesel avg price ex VAT and duty)"},
         {"name": "ulsd_duty", "label": "Diesel Duty", "description": "ULSD (Duty portion)"},
         {"name": "ulsd_vat", "label": "Diesel VAT", "description": "ULSD (VAT portion)"}
       ]
-    }
+    },
+    "links": [
+      {
+        "dataset": "analyze/datasets/weekly_fuel_price_vs_duty_vs_tax_last3years"
+      }
+    ]
   }
 visualisation: |-
   {"chartjs-chart": 
@@ -57,7 +63,7 @@ visualisation: |-
 query: |-
   select 
     price_date as "price_data.week_price_date",
-    ulsd as "ULSD Total",
+    ulsd as "price_data.ulsd_total",
     ulsd_ex as "price_data.ulsd_ex",
     ulsd_duty as "price_data.ulsd_duty",
     ulsd_vat as "price_data.ulsd_vat"

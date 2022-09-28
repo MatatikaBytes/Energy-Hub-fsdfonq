@@ -1,0 +1,43 @@
+version: datasets/v0.2  
+source: tap-solarvista
+title: Daily Project Stats Last 14 Days
+questions: What are the aged project stats over the last 14 days?
+description: |- 
+  Project stats, including aged projects in the table below the chart, for the last full 14 days.
+
+  #Solarvista
+metadata: |- 
+  {
+    "name": "vw_daily_projects", 
+    "label": "Daily project Stats", 
+    "related_table": {
+      "columns": [
+        {"name": "report_year", "label": "Year", "description": "Year"},
+        {"name": "report_month", "label": "Month", "description": "Month"},
+        {"name": "report_day", "label": "Day", "description": "Day"}
+      ],
+      "aggregates": [
+        {"name":"total_open", "label": "Total Open W/Os", "description": "Open projects"},
+        {"name": "total_created", "label": "W/Os Received", "description": "Projects received on this day"},
+        {"name": "total_closed", "label": "W/Os Completed", "description": "Projects completed on this day"},
+        {"name": "total_scheduled", "label": "W/Os Scheduled", "description": "Projects scheduled on this day"},
+        {"name": "total_attended", "label": "W/Os Attended", "description": "Projects attended on this day"}
+      ]
+    }
+  }
+visualisation: |- 
+  {"chartjs-chart": {"chartType": "bar"}}
+query: |- 
+  SELECT "vw_daily_projects"."report_year" "vw_daily_projects.report_year"
+    ,"vw_daily_projects"."report_month" "vw_daily_projects.report_month"
+    ,"vw_daily_projects"."report_day" "vw_daily_projects.report_day"
+    ,COALESCE(SUM("vw_daily_projects"."total_created"),0) "vw_daily_projects.total_created"
+    ,COALESCE(SUM("vw_daily_projects"."total_closed"),0) "vw_daily_projects.total_closed"
+    ,COALESCE(SUM("vw_daily_projects"."total_open"),0) "vw_daily_projects.total_open"
+    FROM "vw_daily_projects" "vw_daily_projects"
+    WHERE "vw_daily_projects"."report_date" > current_date - interval '15 day'  
+    AND vw_daily_projects.report_date < current_date
+    GROUP BY "vw_daily_projects.report_year","vw_daily_projects.report_month","vw_daily_projects.report_day"
+    ORDER BY "vw_daily_projects.report_year" ASC,
+    "vw_daily_projects.report_month" ASC,
+    "vw_daily_projects.report_day" ASC;

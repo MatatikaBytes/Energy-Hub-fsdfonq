@@ -1,0 +1,86 @@
+version: datasets/v0.2
+source: tap-solarvista
+title: Travel Time and Cost Last 6 months
+questions: How much time did travel cost in fuel the last 6 months?
+description: |-
+   Travel time and fuel cost over the last 6 months.
+   
+   Fuel usage is based on the most popular van [Ford Transit](https://vans.honestjohn.co.uk/realmpg/ford/transit-2006)
+
+   A Ford Transit vans achieve between 30 and 35 miles per gallon.
+   
+   According to [Autocar](https://www.autocar.co.uk/car-news/industry/uk-road-traffic-all-time-high), the average speed on A roads in
+   the UK is 25.5mph.
+   
+   1 gallon = 4.54609 liters
+   
+   If a Ford Transit van uses 4.54 liters to travel 35 miles, then the burn rate is 3.3 liters per hour (25.5 miles) travelled.
+
+   #Solarvista
+metadata: |-
+   {
+      "name": "fact_workitem", 
+      "label": "Travel time over the last 6 months",
+      "related_table": {
+         "columns": [
+            {"name": "formatted_month", "label": "Month and Year", "description": "Month and Year"}
+         ], 
+         "aggregates": [
+            {"name": "travel_hours", "label": "Travel Hours", "description": "Working Hours"},
+            {"name": "fuel_cost", "label": "Fuel Cost", "description": "Fuel Cost"}
+         ]
+      },
+      "links": [
+         {
+            "dataset": "analyze/datasets/weekly_diesel_prices_last3years"
+         }
+      ]
+   }
+visualisation: |-
+   {
+      "chartjs-chart": {
+         "chartType": "line",
+         "options": {
+            "scales": {
+               "y": {
+                  "beginAtZero": true,
+                  "title": {
+                     "text": "Travel Hours",
+                     "display": true
+                  }
+               },
+               "y1": {
+                  "display": true,
+                  "position": "right",
+                  "title": {
+                     "text": "Fuel Cost £££",
+                     "display": true
+                  },
+                  "grid": {
+                     "drawOnChartArea": false
+                  }
+               }
+            }
+         }
+      }
+   }
+query: |-
+   SELECT
+      dim_date.date_year*100+dim_date.date_month_of_year "fact_workitem.formatted_month"
+      , round(sum(DATE_PART('day', fact_workitem_stages.preworking_timestamp - fact_workitem_stages.travellingto_timestamp) * 24 + 
+            DATE_PART('hour', fact_workitem_stages.preworking_timestamp - fact_workitem_stages.travellingto_timestamp) * 60 +
+            DATE_PART('minute', preworking_timestamp - travellingto_timestamp)) / 60) as "fact_workitem.travel_hours"
+      , round(round(sum(DATE_PART('day', fact_workitem_stages.preworking_timestamp - fact_workitem_stages.travellingto_timestamp) * 24 + 
+            DATE_PART('hour', fact_workitem_stages.preworking_timestamp - fact_workitem_stages.travellingto_timestamp) * 60 +
+            DATE_PART('minute', preworking_timestamp - travellingto_timestamp)) / 60) * 3.3 * min(vw_fuel_price_wk_avg.ulsd) / 100) as "fact_workitem.fuel_cost"
+   from fact_workitem_stages
+   left join fact_workitem fw on fact_workitem_stages.work_item_id = fw.work_item_id
+   left join dim_date on dim_date.date_day = fw.created_on::date
+   left join vw_fuel_price_wk_avg on vw_fuel_price_wk_avg.price_date = dim_date.mon_sun_week_start
+   where fact_workitem_stages.preworking_timestamp notnull
+   and fact_workitem_stages.travellingto_timestamp notnull
+   and fw.created_on >= date_trunc('month', current_timestamp) - interval '6 months'
+   AND fw.created_on::date < current_date
+   group by dim_date.date_year, dim_date.date_month_of_year
+   order by dim_date.date_year, dim_date.date_month_of_year
+

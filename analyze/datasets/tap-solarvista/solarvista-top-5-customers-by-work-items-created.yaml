@@ -1,0 +1,49 @@
+version: datasets/v0.2
+source: tap-solarvista
+title: Top 5 Customers by Work Items Created
+questions: "How many work items have to made for each customer?"
+description: |-
+   Number of work items created for each customer.
+
+   #Solarvista
+metadata: |-
+   {
+     "name": "fact_workitem",
+     "label": "Top 5 Customers by Work Items Created",
+     "related_table": {
+         "columns": [
+            {"name": "customer_name", "label": "Customer", "description": "Customer"}
+         ],
+         "aggregates": [
+             {"name": "work_item_total", "label": "Work Items", "description": "Work Items"}
+         ]
+       }
+   }
+visualisation: |-
+   {
+      "chartjs-chart": {
+         "chartType": "bar",
+         "options": {
+            "scales": {
+               "y": {
+                  "title": {
+                     "text": "Work Items",
+                     "display": true
+                  },
+                  "ticks": {
+                     "beginAtZero": true
+                  }
+               }
+            }
+         }
+      }
+   }
+query: |-
+   SELECT
+      MIN(name) "fact_workitem.customer_name"
+      , COUNT(*) "fact_workitem.work_item_total"
+   FROM fact_workitem fw
+   LEFT JOIN dim_customer dc ON dc.customer_sk = fw.customer_sk
+   GROUP BY dc.customer_sk
+   ORDER BY "fact_workitem.work_item_total" DESC
+   LIMIT 5;

@@ -1,0 +1,8 @@
+{
+  "plugin_type": "transforms",
+  "name": "dbt-solarvista",
+  "namespace": "tap_solarvista",
+  "variant": "matatika",
+  "repo": "https://github.com/Matatika/dbt-tap-solarvista",
+  "pip_url": "https://github.com/Matatika/dbt-tap-solarvista@v0.4.0"
+}

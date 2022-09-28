@@ -2,6 +2,7 @@
   "plugin_type": "files",
   "name": "files-dbt",
   "namespace": "dbt",
+  "variant": "matatika",
   "repo": "https://github.com/Matatika/files-dbt",
   "pip_url": "git+https://github.com/Matatika/files-dbt@v1.0.x.0"
 }
