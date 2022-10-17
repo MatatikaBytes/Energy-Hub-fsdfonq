@@ -13,13 +13,17 @@ plugins:
   - name: target-postgres--transferwise
     variant: transferwise
     pip_url: git+https://github.com/Matatika/pipelinewise-target-postgres@v0.1.0
+  - name: target-postgres
+    variant: transferwise
+    pip_url: git+https://github.com/Matatika/pipelinewise-target-postgres@v0.1.0
   transforms:
   - name: dbt-solarvista
     variant: matatika
     pip_url: http
   transformers:
   - name: dbt
-    pip_url: 'dbt-core~=1.0.0 dbt-postgres~=1.0.0 dbt-redshift~=1.0.0 dbt-snowflake~=1.0.0 dbt-bigquery~=1.0.0'
+    pip_url: dbt-core~=1.0.0 dbt-postgres~=1.0.0 dbt-redshift~=1.0.0 dbt-snowflake~=1.0.0
+      dbt-bigquery~=1.0.0
     commands:
       run-fuel-models:
         args: run --models dim_date stg_weekly_fuel_prices vw_fuel_price_wk_avg
