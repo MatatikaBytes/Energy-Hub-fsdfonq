@@ -1,0 +1,14 @@
+{
+  "plugin_type": "files",
+  "name": "analyze-solarvista",
+  "namespace": "tap_solarvista",
+  "variant": "matatika",
+  "label": "analyze-solarvista",
+  "repo": "https://github.com/Matatika/analyze-solarvista",
+  "pip_url": "git+https://github.com/Matatika/analyze-solarvista@v0.5.0",
+  "id": "f71ea287-53bf-4876-9f4a-bc34449ad4e3",
+  "update": {
+    "analyze/datasets": "true"
+  },
+  "matatika_hidden": false
+}

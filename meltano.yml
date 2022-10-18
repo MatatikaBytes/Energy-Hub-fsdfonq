@@ -10,9 +10,6 @@ plugins:
     variant: matatika
     pip_url: git+https://github.com/Matatika/tap-solarvista.git
   loaders:
-  - name: target-postgres--transferwise
-    variant: transferwise
-    pip_url: git+https://github.com/Matatika/pipelinewise-target-postgres@v0.1.0
   - name: target-postgres
     variant: transferwise
     pip_url: git+https://github.com/Matatika/pipelinewise-target-postgres@v0.1.0
@@ -31,6 +28,9 @@ plugins:
   files:
   - name: files-dbt
     pip_url: git+https://github.com/Matatika/files-dbt@v1.0.x.0
+  - name: analyze-solarvista
+    variant: matatika
+    pip_url: git+https://github.com/Matatika/analyze-solarvista@v0.5.0
 environments:
 - name: dev
 - name: staging
