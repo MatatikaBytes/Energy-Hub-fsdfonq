@@ -1,7 +1,3 @@
-# This file is managed by the 'files-dbt' file bundle and updated automatically when `meltano upgrade` is run.
-# To prevent any manual changes from being overwritten, remove the file bundle from `meltano.yml` or disable automatic updates:
-#     meltano config --plugin-type=files files-dbt set _update transform/profile/profiles.yml false
-
 config:
   send_anonymous_usage_stats: False
   use_colors: True
