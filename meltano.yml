@@ -16,7 +16,6 @@ plugins:
   transforms:
   - name: dbt-solarvista
     variant: matatika
-    pip_url: http
   transformers:
   - name: dbt
     pip_url: dbt-core~=1.0.0 dbt-postgres~=1.0.0 dbt-redshift~=1.0.0 dbt-snowflake~=1.0.0
