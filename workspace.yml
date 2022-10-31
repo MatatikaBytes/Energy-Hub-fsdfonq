@@ -13,3 +13,5 @@ plugin_paths:
 app_properties:
 # This sets the dataset that will be sent with a welcome message to new users joining your workspace
   WELCOME_DATASET_ALIAS: analyze/datasets/welcome
+  MEMBER_COMMENTS_READ_ONLY: true
+  MEMBER_COMMENTS_READ_ONLY_MESSAGE: Member comments are disabled in this workspace.
